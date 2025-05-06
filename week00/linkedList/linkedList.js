@@ -88,11 +88,38 @@ LinkedList.prototype.deleteLastNode = function () {
     return;
   }
 
-  let secondLast = head;
+  let secondLast = this.head;
   // If secondLast.next.next get value then sheft head to a next node
   while (secondLast.next.next) {
     secondLast = secondLast.next;
   }
   // secondLast.next.next get null
   secondLast.next = null;
+};
+
+// Delete Node by Key
+
+LinkedList.prototype.deleteNodeByKey = function (key) {
+  // If list is empty
+  if (!this.head) {
+    console.log("list is empty");
+  }
+
+  // data found at head
+  if (this.head.data === key) {
+    this.head = this.head.next; // head sheft to a next node
+    return;
+  }
+
+  // find a key
+  let current = this.head;
+  while (current.next) {
+    if (current.next.data === key) {
+      current.next = current.next.next;
+      return;
+    }
+    current = current.next;
+  }
+
+  console.log("No node found with key:", key);
 };
