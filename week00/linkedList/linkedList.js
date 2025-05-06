@@ -62,3 +62,37 @@ LinkedList.prototype.insertAfter = function (prevNode, data) {
   // prevNode next now point to newNode
   prevNode.next = newNode;
 };
+
+// Delete the First Node
+
+LinkedList.prototype.deleteFirstNode = function () {
+  // Check if head is empty
+  if (!this.head) {
+    return;
+  }
+
+  // Moving head to a next node and that become head now
+  this.head = this.head.next;
+};
+
+// Delete the Last Node (second last node)
+
+LinkedList.prototype.deleteLastNode = function () {
+  // Check if head is empty
+  if (!this.head) {
+    return; // Nothing to delete if list is empty
+  }
+
+  if (!this.head.next) {
+    this.head = null; // If head is a only node in list
+    return;
+  }
+
+  let secondLast = head;
+  // If secondLast.next.next get value then sheft head to a next node
+  while (secondLast.next.next) {
+    secondLast = secondLast.next;
+  }
+  // secondLast.next.next get null
+  secondLast.next = null;
+};
