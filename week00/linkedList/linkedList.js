@@ -48,3 +48,17 @@ LinkedList.prototype.insertAtEnd = function (data) {
   // If false add new node
   last.next = newNode;
 };
+
+// Insert at the Given Node
+
+LinkedList.prototype.insertAfter = function (prevNode, data) {
+  // Check if prevNode is null
+  if (!prevNode) {
+    console.log("The given prev node cannot be null");
+    return;
+  }
+  // Create new node and point to next node using prevNode next
+  const newNode = new Node(data, prevNode.next);
+  // prevNode next now point to newNode
+  prevNode.next = newNode;
+};
