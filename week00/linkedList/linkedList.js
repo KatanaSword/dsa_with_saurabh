@@ -123,3 +123,38 @@ LinkedList.prototype.deleteNodeByKey = function (key) {
 
   console.log("No node found with key:", key);
 };
+
+// Search Operation
+
+LinkedList.prototype.search = function (key) {
+  // If list is empty
+  if (!this.head) {
+    console.log("list is empty");
+  }
+
+  let current = this.head;
+  while (current) {
+    if (current.data === key) {
+      return true;
+    }
+  }
+  return false;
+};
+
+// Traversal
+
+LinkedList.prototype.printList = function () {
+  // If list is empty
+  if (!this.head) {
+    console.log("list is empty");
+  }
+
+  let current = this.head;
+  let listValues = [];
+  while (current) {
+    listValues.push(current.data); // add data to list
+    current = current.next; // move to next node
+  }
+
+  console.log(listValues.join(" -> "));
+};
