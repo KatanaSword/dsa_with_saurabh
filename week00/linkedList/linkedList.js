@@ -158,3 +158,24 @@ LinkedList.prototype.printList = function () {
 
   console.log(listValues.join(" -> "));
 };
+
+// Reverse a Linked List
+
+LinkedList.prototype.reverse = function () {
+  // If list is empty
+  if (!this.head) {
+    console.log("list is empty");
+  }
+
+  let current = this.head;
+  let prev = null;
+  let next = null;
+
+  while (current) {
+    next = current.next; // move next to a next node
+    current.next = prev; // point next arrow to a prev node
+    prev = current; // move prev node forward
+    current = next; // move current node forward
+  }
+  this.head = prev; // point head to a prev node
+};
