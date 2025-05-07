@@ -77,4 +77,52 @@ class BinarySearchTree {
     }
     return node;
   }
+
+  // In Order Traversal
+
+  inOrderTraversal() {
+    const result = [];
+    this.inOrder(this.root, result);
+    return result;
+  }
+
+  inOrder(node, result) {
+    if (node) {
+      this.inOrder(node.left, result);
+      result.push(node.key);
+      this.inOrder(node.right, result);
+    }
+  }
+
+  // Pre Order Traversal
+
+  preOrderTraversal() {
+    const result = [];
+    this.preOrder(this.root, result);
+    return result;
+  }
+
+  preOrder(node, result) {
+    if (node) {
+      result.push(node.key);
+      this.preOrder(node.left, result);
+      this.preOrder(node.right, result);
+    }
+  }
+
+  // Post Order Traversal
+
+  postOrderTraversal() {
+    const result = [];
+    this.postOrder(this.root, result);
+    return result;
+  }
+
+  postOrder(node, result) {
+    if (node) {
+      this.postOrder(node.left, result);
+      this.postOrder(node.right, result);
+      result.push(node.key);
+    }
+  }
 }
