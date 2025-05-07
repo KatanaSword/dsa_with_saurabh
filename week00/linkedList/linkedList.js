@@ -51,7 +51,7 @@ LinkedList.prototype.insertAtEnd = function (data) {
 
 // Insert at the Given Node
 
-LinkedList.prototype.insertAfter = function (prevNode, data) {
+LinkedList.prototype.insertAfter = function (data, prevNode) {
   // Check if prevNode is null
   if (!prevNode) {
     console.log("The given prev node cannot be null");
