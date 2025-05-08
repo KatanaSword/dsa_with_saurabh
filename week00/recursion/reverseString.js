@@ -25,6 +25,8 @@ function recursionReverseString(string) {
     return string;
   }
 
+  // return string[string.length - 1] + reversePart recursionReverseString(string.substring(0, string.length - 1)
+
   let reversePart = recursionReverseString(
     string.substring(0, string.length - 1)
   );
