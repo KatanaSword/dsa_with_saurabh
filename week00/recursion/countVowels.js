@@ -11,6 +11,7 @@ function isVowel(character) {
   }
 }
 
+// Iterative
 function countVowels(string) {
   let count = 0;
 
@@ -24,6 +25,7 @@ function countVowels(string) {
 
 // console.log(countVowels("Saurabh"));
 
+// Recursion
 function recursiveCountVowels(string, stringLength) {
   console.log(
     `Length: ${stringLength}, Current String ${string.substring(
